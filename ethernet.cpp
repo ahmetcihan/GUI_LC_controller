@@ -4,15 +4,17 @@
 void MainWindow::periodic_send(void){
     QByteArray arr;
 
-    arr[0] = 'm';
-    arr[1] = 'a';
-    arr[2] = 's';
-    arr[3] = 't';
-    arr[4] = 'e';
-    arr[5] = 'r';
+    arr[0] = 'l';
+    arr[1] = 'c';
+    arr[2] = 'c';
+    arr[3] = 'o';
+    arr[4] = 'n';
+    arr[5] = 't';
     for(u8 i = 0; i < 4; i++){
         arr[6 + i] = relay_status[i];
     }
+    arr[10] = (ui->spinBox_voltage->value() / 256) % 256;
+    arr[11] = (ui->spinBox_voltage->value()) % 256;
 
     remote->writeDatagram(arr, remote->target, remote->dstPort);
     qDebug() << "eth periodic send";

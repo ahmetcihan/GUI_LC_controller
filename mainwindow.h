@@ -43,8 +43,6 @@ public:
         double stress;
     };
     struct _real_time real_time;
-signals:
-    void test_value_tracker(QString val);
 
 public slots:
     void eth_reconnect(void);

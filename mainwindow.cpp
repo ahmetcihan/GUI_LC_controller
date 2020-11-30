@@ -28,6 +28,8 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->radioButton_relay3_on,SIGNAL(toggled(bool)),this,SLOT(relay_3_status_handle(bool)));
     connect(ui->radioButton_relay4_on,SIGNAL(toggled(bool)),this,SLOT(relay_4_status_handle(bool)));
 
+    connect(ui->horizontalSlider_voltage,SIGNAL(valueChanged(int)),ui->spinBox_voltage,SLOT(setValue(int)));
+
     for(u8 i = 0; i < 4 ; i++){
         relay_status[i] = 0;
     }
