@@ -1,0 +1,96 @@
+QTabWidget,
+QGroupBox,
+QDialog,
+QMainWindow,
+Title,
+QLabel,
+QFrame,
+QWidget {
+    color: rgb(0,0,139);
+    background-color: black;
+    border: 1px solid rgb(169,169,169);
+    background: rgb(175,238,238);
+}
+
+QTabBar::tab{
+    color: rgb(0,0,139);
+    background-color: black;
+    background: qlineargradient(x1:0, y1:1, x2:1, y2:1, stop:0 rgba(255, 255, 255, 100%), stop:1 rgba(0, 206, 209, 100%));
+}
+
+QTabBar::tab:selected {
+    background: rgb(0,206,209);
+}
+
+QTabBar::tab:disabled {
+    color: rgb(128,128,128);
+}
+
+QLineEdit,
+QPlainTextEdit,
+QSpinBox,
+QDoubleSpinBox,
+QMenu {
+    color: rgb(0,0,0);
+    selection-color: black;
+    selection-background-color: rgb(255,255,0);
+    background: rgb(175,238,238);
+    border: 1px solid gray;
+    padding: 2px;
+}
+
+QComboBox,
+QListView {
+   color: rgb(0,0,139);
+   selection-color: black;
+   selection-background-color: rgb(255,255,0);
+   background: rgb(64,224,208);
+   border: 1px solid gray;
+   padding: 2px;
+}
+
+QPushButton {
+   color: rgb(0,0,139);
+   background: rgb(0,206,209);
+   border: 1px solid black;
+}
+
+QPushButton:pressed,
+QPushButton:on {
+    color: rgb(255,0,0);
+    background: white;
+}
+
+QSpinBox:disabled,QDoubleSpinBox:disabled,QPushButton:disabled {
+    color: rgb(128,128,128);
+}
+
+QCheckBox,QRadioButton {
+    color: rgb(0,0,139);
+    background: rgb(175,238,238);
+}
+
+QCheckBox::indicator,
+QRadioButton::indicator {
+    background: rgb(64,224,208);
+    width: 26px;
+    height: 26px;
+}
+
+QCheckBox::indicator:checked,
+QRadioButton::indicator:checked {
+    background: rgb(64,224,208);
+    width: 30px;
+    height: 30px;
+    image: url(:qss/qmc2-black-fast/ok-new.png);
+}
+
+QSpinBox::up-button,
+QSpinBox::down-button,
+QDoubleSpinBox::up-button,
+QDoubleSpinBox::down-button
+{
+    width: 0px;
+}
+
+

@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qss/qmc2-black-fast/qmc2-black-0.10.qss</file>
+        <file>qss/qmc2-black-fast/ok-new.png</file>
+    </qresource>
+</RCC>
