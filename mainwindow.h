@@ -2,20 +2,15 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTimer>
+#include <QFile>
 #include <QElapsedTimer>
-#include <qcustomplot.h>
 #include "remoteconnection.h"
 
 typedef char s8;
 typedef unsigned char u8;
 typedef unsigned int u32;
 typedef signed int s32;
-
-#define STEPPER_COMMAND_RUN_LEFT    1
-#define STEPPER_COMMAND_RUN_RIGHT   2
-#define STEPPER_COMMAND_STOP        3
-#define STEPPER_COMMAND_POS_RESET   4
-#define STEPPER_COMMAND_GO_POS      5
 
 namespace Ui {
 class MainWindow;
@@ -33,15 +28,12 @@ public:
     void plot_graph(void);
 
     RemoteConnection *remote;
-    QCustomPlot *customPlot;
     QElapsedTimer graph_time;
     QString currentStyleSheet;
     QTimer *_100_msec_timer;
     u8 global_downcounter;
-    u8 step_motor_command;
-    u32 step_motor_speed;
 
-    bool relay_status[6];
+    bool relay_status[4];
 
     struct _real_time{
         int test_no;
@@ -65,13 +57,6 @@ public slots:
     void relay_2_status_handle(bool val);
     void relay_3_status_handle(bool val);
     void relay_4_status_handle(bool val);
-    void relay_5_status_handle(bool val);
-    void relay_6_status_handle(bool val);
-    void step_run_left(void);
-    void step_run_right(void);
-    void step_stop(void);
-    void step_pos_reset(void);
-    void step_go_pos(void);
 
 private:
     Ui::MainWindow *ui;
