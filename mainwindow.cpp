@@ -18,7 +18,8 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(_100_msec_timer, SIGNAL(timeout()),this,SLOT(_100_msec_loop()));
     _100_msec_timer->start();
 
-    //QTimer::singleShot(1000,this,SLOT(start_comm()));
+    QTimer::singleShot(1000,this,SLOT(start_comm()));
+
     connect(remote,SIGNAL(periodic_response_handler(QByteArray)),this,SLOT(periodic_response_handler(QByteArray)));
 
     connect(ui->pushButton_reconnect,SIGNAL(clicked()),this,SLOT(eth_reconnect()));

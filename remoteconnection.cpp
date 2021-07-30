@@ -46,4 +46,23 @@ void RemoteConnection::readPendingDatagrams(){
 
     //el.quit();
 }
+QString RemoteConnection::get(const QString &key){
+    QString str = QString("get %1\n").arg(key);
+    writeDatagram(str.toUtf8(), target, dstPort);
+    if (!wait(&el, 100))
+        return "__timeout__";
+    foreach (QString line, resp) {
+        QString pre = QString("get:%1:").arg(key);
+        if (!line.startsWith(pre))
+            continue;
+        resp.removeOne(line);
+        return line.remove(pre);
+    }
+    return "";
+}
+int RemoteConnection::set(const QString &key, const QString &value){
+    QString str = QString("set %1 %2\n").arg(key).arg(value);
+    writeDatagram(str.toUtf8(), target, dstPort);
+    return 0;
+}
 

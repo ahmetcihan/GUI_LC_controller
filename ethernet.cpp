@@ -23,10 +23,9 @@ void MainWindow::periodic_send(void){
 void MainWindow::start_comm(void){
     qDebug(__FUNCTION__);
 
-    //remote->set("device_settings.stream.enable", "1");
-    //remote->set("Filan","");
-    QString str = QString("Filan");
-    remote->writeDatagram(str.toUtf8(), remote->target, remote->dstPort);
+    remote->set("device_settings.stream.enable", "1");
+//    QString str = QString("Filan");
+//    remote->writeDatagram(str.toUtf8(), remote->target, remote->dstPort);
 
 
 }
@@ -41,7 +40,7 @@ void MainWindow::periodic_response_handler(QByteArray datagram){
         qDebug() << "got the answer";
         global_downcounter = 10;
     }
-    //qDebug() << "relay address" << (u8)datagram[6];
+    qDebug() << "LC comm status" << (u8)datagram[7];
 
     ui->label_input_1->setText(QString::number(datagram[8]));
     ui->label_input_2->setText(QString::number(datagram[9]));

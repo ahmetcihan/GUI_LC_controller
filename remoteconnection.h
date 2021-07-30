@@ -13,11 +13,14 @@ class RemoteConnection : public QUdpSocket
 public:
     explicit RemoteConnection(int port = 1000, QObject *parent = 0);
     void setTarget(const QString &targetIp);
+    QString get(const QString &key);
+    int set(const QString &key, const QString &value);
 
     QEventLoop el;
     QHostAddress sender;
     QHostAddress target;
     quint16 senderPort;
+    QStringList resp;
     int dstPort;
 signals:
     void periodic_response_handler(QByteArray data);
