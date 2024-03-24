@@ -32,7 +32,6 @@ public:
     QString currentStyleSheet;
     QTimer *_100_msec_timer;
     u8 global_downcounter;
-
     bool relay_status[2];
 
     struct _real_time{

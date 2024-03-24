@@ -22,6 +22,7 @@ public:
     quint16 senderPort;
     QStringList resp;
     int dstPort;
+
 signals:
     void periodic_response_handler(QByteArray data);
 

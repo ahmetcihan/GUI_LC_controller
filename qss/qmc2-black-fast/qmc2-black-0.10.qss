@@ -1,29 +1,65 @@
 QTabWidget,
-QGroupBox,
 QDialog,
 QMainWindow,
 Title,
-QLabel,
-QFrame,
 QWidget {
-    color: rgb(0,0,139);
+    color: rgb(175,238,238);
     background-color: black;
-    border: 1px solid rgb(169,169,169);
-    background: rgb(175,238,238);
+    border: 1px solid rgb(128,255,0);
+    background: rgb(0,33,99);
+    padding: 0px;
+    border-radius: 5px;
+}
+
+QWidget#widget_graph {
+    color: rgb(175,238,238);
+    background-color: black;
+    border: 2px solid rgb(128,255,0);
+    background: rgb(0,33,99);
+    border-radius: 10px;
+    padding: 0px;
+}
+
+QFrame,
+QGroupBox {
+    color: rgb(175,238,238);
+    background-color: black;
+    border: 2px solid rgb(128,255,0);
+    background: rgb(0,33,99);
+    border-radius: 10px;
+    padding: 0px;
+
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top center;
+    padding: 0px;
+    top: 4px;
+    color: rgb(175,238,238);
+    background: rgb(0,33,99);
+}
+
+QLabel {
+    color: rgb(175,238,238);
+    background-color: black;
+    background: rgb(0,33,99);
+    border: none;
+    padding: 0px;
+    border-radius: 0px;
 }
 
 QTabBar::tab{
-    color: rgb(0,0,139);
+    color: rgb(150,150,150);
     background-color: black;
-    background: qlineargradient(x1:0, y1:1, x2:1, y2:1, stop:0 rgba(255, 255, 255, 100%), stop:1 rgba(0, 206, 209, 100%));
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 rgb(106, 108, 143), stop:1 rgb(54, 82, 129));
+    padding: 0px;
 }
 
 QTabBar::tab:selected {
-    background: rgb(0,206,209);
-}
-
-QTabBar::tab:disabled {
-    color: rgb(128,128,128);
+    color: rgb(0,33,99);
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 rgb(223, 233, 251), stop:1 rgb(61,133,198));
+    padding: 0px;
+    border-top-left-radius: 5px;
 }
 
 QLineEdit,
@@ -31,12 +67,12 @@ QPlainTextEdit,
 QSpinBox,
 QDoubleSpinBox,
 QMenu {
-    color: rgb(0,0,0);
-    selection-color: black;
-    selection-background-color: rgb(255,255,0);
+    color: rgb(0,33,99);
     background: rgb(175,238,238);
-    border: 1px solid gray;
-    padding: 2px;
+    border: 0px;
+    border-radius: 10px;
+    padding: 0px;
+
 }
 
 QComboBox,
@@ -44,21 +80,73 @@ QListView {
    color: rgb(0,0,139);
    selection-color: black;
    selection-background-color: rgb(255,255,0);
-   background: rgb(64,224,208);
-   border: 1px solid gray;
-   padding: 2px;
+   background: rgb(175,238,238);
+   padding: 0px;
 }
 
 QPushButton {
    color: rgb(0,0,139);
-   background: rgb(0,206,209);
+   background: rgb(128,206,209);
    border: 1px solid black;
+   border-radius: 15px;
+   padding: 0px;
 }
 
 QPushButton:pressed,
 QPushButton:on {
     color: rgb(255,0,0);
     background: white;
+}
+
+QPushButton#pushButton_pid_specimen_0,
+            #pushButton_cal_point_no_select_0,
+            #pushButton_cal_ch_select_0,
+            #pushButton_specimen_select_0
+{
+   background: rgb(175,238,238);
+   color: rgb(0,33,99);
+   border-radius: 0px;
+   padding: 0px;
+}
+QPushButton#pushButton_pid_specimen_1,
+            #pushButton_cal_point_no_select_1,
+            #pushButton_cal_ch_select_1,
+            #pushButton_specimen_select_1
+{
+   background: rgb(103,78,167);
+   color: rgb(0,33,99);
+   border-radius: 0px;
+   padding: 0px;
+}
+QPushButton #pushButton_pid_specimen_0:pressed,#pushButton_pid_specimen_1:pressed,
+            #pushButton_cal_point_no_select_0:pressed,#pushButton_cal_point_no_select_1:pressed,
+            #pushButton_cal_ch_select_0:pressed,#pushButton_cal_ch_select_1:pressed,
+            #pushButton_specimen_select_0:pressed,#pushButton_specimen_select_1:pressed
+{
+    color: rgb(255,0,0);
+    background: white;
+}
+
+QPushButton#pushButton_set_polarity_ch4_bipolar,#pushButton_set_polarity_ch3_bipolar,#pushButton_set_polarity_ch2_bipolar,#pushButton_set_polarity_ch1_bipolar,
+            #pushButton_set_polarity_ch4_unipolar,#pushButton_set_polarity_ch3_unipolar,#pushButton_set_polarity_ch2_unipolar,#pushButton_set_polarity_ch1_unipolar{
+    color: rgb(0, 255, 255);
+    background-color: rgb(221, 0, 166);
+}
+QPushButton#pushButton_set_polarity_ch4_bipolar:pressed,#pushButton_set_polarity_ch3_bipolar:pressed,#pushButton_set_polarity_ch2_bipolar:pressed,#pushButton_set_polarity_ch1_bipolar:pressed,
+            #pushButton_set_polarity_ch4_unipolar:pressed,#pushButton_set_polarity_ch3_unipolar:pressed,#pushButton_set_polarity_ch2_unipolar:pressed,#pushButton_set_polarity_ch1_unipolar:pressed{
+    color: rgb(0, 0, 0);
+    background-color: white;
+}
+
+QPushButton#pushButton_set_type_load_cell_ch_4,#pushButton_set_type_load_cell_ch_3,#pushButton_set_type_load_cell_ch_2,#pushButton_set_type_load_cell_ch_1,
+            #pushButton_set_type_lvdt_ch_4,#pushButton_set_type_lvdt_ch_3,#pushButton_set_type_lvdt_ch_2,#pushButton_set_type_lvdt_ch_1{
+            color: rgb(0, 255, 255);
+            background-color: rgb(166, 0, 166);
+}
+QPushButton#pushButton_set_type_load_cell_ch_4:pressed,#pushButton_set_type_load_cell_ch_3:pressed,#pushButton_set_type_load_cell_ch_2:pressed,#pushButton_set_type_load_cell_ch_1:pressed,
+            #pushButton_set_type_lvdt_ch_4:pressed,#pushButton_set_type_lvdt_ch_3:pressed,#pushButton_set_type_lvdt_ch_2:pressed,#pushButton_set_type_lvdt_ch_1:pressed{
+    color: rgb(0, 0, 0);
+    background-color: white;
 }
 
 QSpinBox:disabled,QDoubleSpinBox:disabled,QPushButton:disabled {
@@ -68,6 +156,7 @@ QSpinBox:disabled,QDoubleSpinBox:disabled,QPushButton:disabled {
 QCheckBox,QRadioButton {
     color: rgb(0,0,139);
     background: rgb(175,238,238);
+    padding: 0px;
 }
 
 QCheckBox::indicator,
@@ -75,6 +164,7 @@ QRadioButton::indicator {
     background: rgb(64,224,208);
     width: 26px;
     height: 26px;
+    padding: 0px;
 }
 
 QCheckBox::indicator:checked,
@@ -93,4 +183,22 @@ QDoubleSpinBox::down-button
     width: 0px;
 }
 
-
+QwtPlotCanvas
+{
+    border: 1px solid White;
+    border-radius: 10px;
+    background-color: rgb(255,255,255);
+}
+QwtScaleWidget
+{
+    color: rgb(255,255,0);
+}
+QwtTextLabel
+{
+    color: white;
+}
+QProgressBar
+{
+    color: black;
+    background-color: white;
+}

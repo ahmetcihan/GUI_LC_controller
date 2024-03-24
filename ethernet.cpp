@@ -27,8 +27,6 @@ void MainWindow::start_comm(void){
     remote->set("device_settings.stream.enable", "1");
 //    QString str = QString("Filan");
 //    remote->writeDatagram(str.toUtf8(), remote->target, remote->dstPort);
-
-
 }
 void MainWindow::periodic_response_handler(QByteArray datagram){
     union _my_resp{

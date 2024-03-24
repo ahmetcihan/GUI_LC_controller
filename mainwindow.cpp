@@ -19,14 +19,10 @@ MainWindow::MainWindow(QWidget *parent) :
     _100_msec_timer->start();
 
     QTimer::singleShot(1000,this,SLOT(start_comm()));
-
     connect(remote,SIGNAL(periodic_response_handler(QByteArray)),this,SLOT(periodic_response_handler(QByteArray)));
-
     connect(ui->pushButton_reconnect,SIGNAL(clicked()),this,SLOT(eth_reconnect()));
-
     connect(ui->radioButton_relay1_on,SIGNAL(toggled(bool)),this,SLOT(relay_1_status_handle(bool)));
     connect(ui->radioButton_relay2_on,SIGNAL(toggled(bool)),this,SLOT(relay_2_status_handle(bool)));
-
     connect(ui->horizontalSlider_voltage,SIGNAL(valueChanged(int)),ui->spinBox_voltage,SLOT(setValue(int)));
 
     for(u8 i = 0; i < 4 ; i++){
