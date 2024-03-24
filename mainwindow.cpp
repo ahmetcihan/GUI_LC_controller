@@ -26,8 +26,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(ui->radioButton_relay1_on,SIGNAL(toggled(bool)),this,SLOT(relay_1_status_handle(bool)));
     connect(ui->radioButton_relay2_on,SIGNAL(toggled(bool)),this,SLOT(relay_2_status_handle(bool)));
-    connect(ui->radioButton_relay3_on,SIGNAL(toggled(bool)),this,SLOT(relay_3_status_handle(bool)));
-    connect(ui->radioButton_relay4_on,SIGNAL(toggled(bool)),this,SLOT(relay_4_status_handle(bool)));
 
     connect(ui->horizontalSlider_voltage,SIGNAL(valueChanged(int)),ui->spinBox_voltage,SLOT(setValue(int)));
 
@@ -71,12 +69,6 @@ void MainWindow::relay_1_status_handle(bool val){
 }
 void MainWindow::relay_2_status_handle(bool val){
     relay_status[1] = val;
-}
-void MainWindow::relay_3_status_handle(bool val){
-    relay_status[2] = val;
-}
-void MainWindow::relay_4_status_handle(bool val){
-    relay_status[3] = val;
 }
 void MainWindow::set_gradient(void){
     QFile file;

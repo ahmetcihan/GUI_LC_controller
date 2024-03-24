@@ -33,7 +33,7 @@ public:
     QTimer *_100_msec_timer;
     u8 global_downcounter;
 
-    bool relay_status[4];
+    bool relay_status[2];
 
     struct _real_time{
         int test_no;
@@ -53,8 +53,6 @@ public slots:
     void set_gradient(void);
     void relay_1_status_handle(bool val);
     void relay_2_status_handle(bool val);
-    void relay_3_status_handle(bool val);
-    void relay_4_status_handle(bool val);
 
 private:
     Ui::MainWindow *ui;
